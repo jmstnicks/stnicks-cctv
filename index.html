@@ -1,42 +1,133 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SNA Remote Viewing</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<html>
-    <head>
-        <title>SNA Remote Viewing</title>
-        <meta charset="UTF-8" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:ital,wght@0,300;0,500;1,400;1,600&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel = "stylesheet" href = "./css/styles.css" />
-    </head>
+body {
+  margin: 0;
+}
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+	a {
+    display: inline-block;
+    padding: 20px;
+    min-width: 150px;
+	width: 100%;
+	margin: 5px auto;
+    text-decoration: none;
+    border: solid thin #CDCDCD;
+    border-radius: 9px;
+    color: rgb(43, 49, 51);
+    text-align: center;
+	font-size: 20px;
+	}
+
+	img {
+	display: block;
+	margin-top: 33px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+  
+	a {
+    display: inline-block;
+    padding: 20px;
+    min-width: 150px;
+	width: 100%;
+	margin: 5px auto;
+    text-decoration: none;
+    border: solid thin #CDCDCD;
+    border-radius: 9px;
+    color: rgb(43, 49, 51);
+    text-align: center;
+	font-size: 20px;
+	}
 	
-    <body>
-		<div style="padding-bottom: 50px">
-			<img src="./sna-logo.png" alt="handsome dog" style="display: inline-block; vertical-align: middle">
-			<h1 style="display: inline-block; vertical-align: middle; font-size: 50px;">SNA Remote Viewing</h1>
-		</div>
-        <ul class = "link-list">
-            <li class = "w-64">
-                <a href = "http://106gerry.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
-                    <span>106 Gerry St</span>
-                </a>
-            </li>
-            <li class = "w-64">
-                <a href = "http://140johnson.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
-                    <span>140 Johnson Ave</span>
-                </a>
-            </li>
-            <li class = "w-64">
-                <a href = "http://662broadway.stnicksalliance.org:81/ui3.htm">
-                    <span>662 Broadway Ave</span>
-                </a>
-            </li>
-            <li class = "w-64">
-                <a href = "http://670broadway.stnicksalliance.org:81/ui3.htm">
-                    <span>670 Broadway Ave</span>
-                </a>
-            </li>
-        </ul>
-    </body>
+	img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+}
+</style>
+</head>
+<body>
+
+
+<div>
+	<img src="./sna-logo.png">
+</div>
+<div style="padding-bottom: 20px; text-align: center;">
+	<h1 style="font-size: 2.5rem; font-family: 'Calibri';">SNA Remote Viewing</h1>
+</div>
+		
+<div class="row">
+
+	<div class="column">
+		<a href = "http://106gerry.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
+            <span>106 Gerry</span>
+        </a>
+	</div>
+  
+	<div class="column">
+		<a href = "http://140johnson.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
+			<span>140 Johnson Ave</span>
+		</a>
+	</div>
+  
+	<div class="column">
+		<a href = "http://67.80.223.221:81">
+			<span>590 Dekalb Ave</span>
+		</a>
+	</div>
+  
+	<div class="column">
+		<a href = "http://662broadway.stnicksalliance.org:81/ui3.htm">
+			<span>662 Broadway Ave</span>
+		</a>
+	</div>
+
+  
+	<div class="column">
+		<a href = "http://670broadway.stnicksalliance.org:81/ui3.htm">
+			<span>670 Broadway Ave</span>
+		</a>
+	</div>
+  
+	<div class="column">
+		<a href = "http://71.105.47.242:81">
+			<span>695 Grand St</span>
+		</a>
+	</div>
+  
+</div>
+
+</body>
 </html>
