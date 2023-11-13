@@ -1,163 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ 
 <head>
-<title>SNA Remote Viewing</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 15px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-	a {
-    display: inline-block;
-    padding: 20px;
-    min-width: 150px;
-	width: 100%;
-	margin: 5px auto;
-    text-decoration: none;
-    border: solid thin #CDCDCD;
-    border-radius: 9px;
-    color: rgb(43, 49, 51);
-    text-align: center;
-	font-size: 20px;
-	}
-
-	img {
-	display: block;
-	margin-top: 33px;
-	margin-left: auto;
-	margin-right: auto;
-	}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
-  }
-  
-	a {
-    display: inline-block;
-    padding: 20px;
-    min-width: 150px;
-	width: 100%;
-	margin: 5px auto;
-    text-decoration: none;
-    border: solid thin #CDCDCD;
-    border-radius: 9px;
-    color: rgb(43, 49, 51);
-    text-align: center;
-	font-size: 20px;
+h2 {
+	text-align:center;
+	font-size:10vw;
+	font-family: calibri;
+	background-color:white;}
+p {
+	font-family: calibri;
+	font-size:6vw;}
+	
+textarea {
+	padding-top: 15%;
+	padding-bottom: 5%;
+	padding-left: 1%;
+	padding-right: 1%;
+	background-color: white;
+	width: 90%;
+	
+	height: 125px;
+	//height: auto;
+	font-size: 6.5vw;
+	text-align: center;
+	font-family: calibri;
+	font-weight: bold;
 	}
 	
-	img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
+button {
+	width: 50%;
+	padding: 2%;
+	text-align: center;
+	font-size:6vw;
+	border-radius: 4px;}
+	
+section {
+	text-align:center;
+	background-color:lightblue;
+	padding-top: 2%;
+	padding-bottom: 15%;}
+	
+body {
+	background-color: black;}
 
-}
 </style>
+
+<title>Icebreaker App</title>
+
 </head>
+
 <body>
 
+<section style="background-color:lightblue;">
+	<!-- New Combo Area -->
+	
+	<h2>Icebreaker <br><a style="font-size: 6vw;">"Go ahead. Start a conversation"</a></br></h2>
+	<p>Press the green button to start</p>
 
-<div>
-	<img src="./sna-logo.png">
-</div>
-<div style="padding-bottom: 20px; text-align: center;">
-	<h1 style="font-size: 2.5rem; font-family: 'Calibri';">SNA Remote Viewing</h1>
-</div>
+
+	<textarea cols="50" id="output" value="moves" readonly style="padding-bottom: 5%;"></textarea>
+<br>
+<br>
+<button id="button3" style="background-color:white;">Copy Question</button>
+
+	<br>
+	<br>
+ <br>
+ 
+<button id="button1" style="background-color:lightgreen;">New Question</button>
+
+
+</section>
+
+
+<script>
+		// Question Generator
+		var questionList = [
+			
+"Before making a telephone call, do you ever rehearse what you are going to say?",
+"Given the choice of anyone in the world, whom would you want as a dinner guest and why?",
+"Is there something that you've dreamed of doing for a long time? Why haven't you done it?",
+"What would constitute the perfect day for you?",
+"If you could wake up tomorrow anywhere in the world where would it be?",
+"What has been your greatest experience so far in life? ",
+"Would you like to be famous? In what way?",
+"What’s the most-exciting sexual experience you’ve ever had?",
+"If your friends were going to describe you in 2-3 words, what words do you secretly hope they use?",
+"What’s the weirdest thing about you that almost no one knows? ",
+"Who’s your favorite female movie character ever? What is it about her you like most?",
+"Who’s your favorite male movie character ever? What is it about him you like most?",
+"What’s something you secretly want to brag about? ",
+"What’s that one part of your personality you’ve always worked on and are really, truly proud of now? Why is it so important to you?",
+"What are you true feelings about monogamy?",
+"What are 3 things you think we have in common? ",
+"If you had to sum up your life story in 3 minutes, what would you say? ",
+"When’s the last time you were really jealous? Why? ",
+"When’s the last time you felt truly grateful? Why? ",
+"If a genie could appear and answer any question you had about life or the world, what would you want to know? ",
+"What do you value most in a friendship? ",
+"What do you value most in someone you’re sleeping with? ",
+"If you were going to become really close friends with somebody, what are 2 things you would want them to know? ",
+"If I were to scroll through your iPod, what’s the weirdest thing I would find? ",
+"If you were going to live on an island and could only bring 3 things with you, what do you bring? ",
+"If you could make out with anyone for 3 minutes, and no one would ever find out, who would it be? ",
+"If you could only visit 3 websites for the rest of your life, which 3 would they be? ",
+"If you had to sum up the first date you ever went on in 2 minutes, how would you sum it up?",
+"If you could only eat one food for the rest of your life, and it had to be healthy, what would it be?",
+"What foreign place do you want to visit most? What is it about that place that attracts you?",
+"What’s your most treasured memory?",
+"What’s the most memorable book you’ve ever read? What was it about that book? ",
+"Who’s someone you really admire and look up to? Why?",
+"What’s your biggest turn-off?",
+"What’s your biggest turn-on?",
+"When’s the last time you did something that was way outside your comfort zone?",
+"If they made a movie about your life so far, what would it be rated?",
+"What was it like the first time you fell in love?",
+"What outfit do you think you look sexiest in?",
+"If you had a pair of X-ray glasses, which part of a guy’s body would you look at first?",
+"What’s the sneakiest trick you play on guys to attract them?",
+"What are 3 things about you that would make someone want to get to know you better, but can’t be anything about your looks?",
+"What’s your favorite place to be kissed besides your lips?",
+"Who do you think is the most attractive girl in the world?",
+"If you were gonna take me to your favorite restaurant, where would we go and what would you order?",
+"Imagine you have your feet in the sand, looking out at the deep, wet, endless abyss of the blue ocean on a warm, sunny day. If you had to describe how you feel in a few words, how would you describe it?",
+"What was your favorite TV show as a kid? Why?",
+"What did you imagine as your dream job when you were a kid?",
+"Remember the best summer of your life. What’d you do? What was it like?",
+"If you were have to the best sex of your life in your dream location, what main positions would it be in and where would it be?",
+    
+"What is your middle name?",
+"How old are you?",
+"When is your birthday?",
+"What is your zodiac sign?",
+"What is your favorite color?",
+"What is your lucky number?",
+"Do you have any pets?",
+"Where are you from?",
+"How tall are you?",
+"What size shoes do you wear?",
+"How many pairs of shoes do you own?",
+"What was your last dream about?",
+"What talents do you have?",
+"Have you ever had any psychic moments?",
+"Favorite song?",
+"Favorite movie?",
+"What would your ideal partner be like?",
+"Do you want children?",
+"Do you want a church wedding?",
+"Are you religious?",
+"Have you ever been to the hospital?",
+"Have you ever got in trouble with the law?",
+"Have you ever met any celebrities?",
+"Baths or showers?",
+"What color socks are you wearing?",
+"Have you ever been famous?",
+"Would you like to be a big celebrity?",
+"What type of music do you like?",
+"Have you ever been skinny dipping?",
+"How many pillows do you sleep with?",
+"What position do you usually sleep in?",
+"How big is your house?",
+"What do you typically have for breakfast?",
+"Have you ever fired a gun?",
+"Have you ever tried archery?",
+"Favorite clean word?",
+"Favorite swear word?",
+"What's the longest you've ever gone without sleep?",
+"Do you have any scars?",
+"Have you ever had a secret admirer?",
+"Are you a good liar?",
+"Are you a good judge of character?",
+"Can you do any other accents other than your own?",
+"Do you have a strong accent?",
+"What is your favorite accent?",
+"What is your personality type?",
+"What is your most expensive piece of clothing?",
+"Can you curl your tongue?",
+"Are you an innie or an outie?",
+"Left or right handed?",
+"Are you scared of spiders?",
+"Favorite food?",
+"Favorite foreign food?",
+"Are you a clean or messy person?",
+"What is your most used phrase?",
+"What is your most used word?",
+"How long does it take for you to get ready?",
+"Do you have much of an ego?",
+"Do you suck or bite lollipops?",
+"Do you talk to yourself?",
+"Do you sing to yourself?",
+"Are you a good singer?",
+"What is your biggest Fear?",
+"Are you a gossip?",
+"Best dramatic movie you've seen?",
+"Do you like long or short hair?",
+"Can you name all 50 states of America?",
+"Favorite school subject?",
+"Extrovert or Introvert?",
+"Have you ever been scuba diving?",
+"What makes you nervous?",
+"Are you scared of the dark?",
+"Do you correct people when they make mistakes?",
+"Are you ticklish?",
+"Have you ever started a rumor?",
+"Have you ever been in a position of authority?",
+"Have you ever drank underage?",
+"Have you ever done drugs?",
+"Who was your first real crush?",
+"How many piercings do you have?",
+"Can you roll your Rs?",
+"How fast can you type?",
+"How fast can you run?",
+"What color is your hair?",
+"What color is your eyes?",
+"What are you allergic to?",
+"Do you keep a journal?",
+"What do your parents do?",
+"Do you like your age?",
+"What makes you angry?",
+"Do you like your own name?",
+"Have you already thought of baby names, and if so what are they?",
+"Do you want a boy a girl for a child?",
+"What are you strengths?",
+"What are your weaknesses?",
+"How did you get your name?",
+"Were your ancestors royalty?",
+"Do you have any scars?",
+"Color of your bedspread?",
+"Color of your room?",
+"How would you describe your friends?"
+];
 		
-<div class="row">
-
-	<div class="column">
-		<a href = "http://106gerry.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
-            <span>106 Gerry</span>
-        </a>
-	</div>
-  
-	<div class="column">
-		<a href = "http://140johnson.stnicksalliance.org:81/login.htm?page=%2Fui3.htm">
-			<span>140 Johnson</span>
-		</a>
-	</div>
-  
-	<div class="column">
-		<a href = "http://67.87.174.78:81">
-			<span>161 Halsey</span>
-		</a>
-	</div>
-	
-	<div class="column">
-		<a href = "http://24.103.253.238:81">
-			<span>260 Powers</span>
-		</a>
-	</div>
-	
-	<div class="column">
-		<a href = "http://108.162.14.34:81">
-			<span>270 Pulaski</span>
-		</a>
-	</div>
+		const shadowList = [];
+		var counter = 0;
+		var backCounter, resetCounter = 0;
 		
-	<div class="column">
-		<a href = "http://50.74.73.106:81">
-			<span>306 Union</span>
-		</a>
-	</div>
-	
-	<div class="column">
-		<a href = "http://67.80.223.221:81">
-			<span>590 Dekalb</span>
-		</a>
-	</div>
-  
-	<div class="column">
-		<a href = "http://662broadway.stnicksalliance.org:81/ui3.htm">
-			<span>662 Broadway</span>
-		</a>
-	</div>
+	// Button Controllers
+	document.getElementById("button1").addEventListener("click", newQuestion);
+	document.getElementById("button3").addEventListener("click", copyMe);
 
-  
-	<div class="column">
-		<a href = "http://670broadway.stnicksalliance.org:81/ui3.htm">
-			<span>670 Broadway</span>
-		</a>
-	</div>
-  
-	<div class="column">
-		<a href = "http://71.105.47.242:81">
-			<span>695 Grand</span>
-		</a>
-	</div>
-	  
-	<div class="column">
-		<a href = "http://47.21.141.114:81">
-			<span>891 & 895 Mother Gatson</span>
-		</a>
-	</div>
-  
-</div>
 
+	// Generates new question
+	function newQuestion() {
+		// Generates random number to pick question from list
+		var x = Math.floor(Math.random() * questionList.length);
+		
+		// Displays new question
+		huv = document.getElementById("output");
+		huv.value = questionList[x];
+
+	}
+		
+	// Copies Text in 1st Textarea
+	function copyMe() {
+	  /* Get the text field */
+	  var copyText = document.getElementById("output");
+
+	  /* Select the text field */
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	  /* Copy the text inside the text field */
+	  document.execCommand("copy");
+
+	  /*Alert the copied text
+	  alert("Copied the text: " + copyText.value); */
+	}
+
+</script>
 </body>
-</html>
+</html> 
